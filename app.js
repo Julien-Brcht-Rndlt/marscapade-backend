@@ -16,7 +16,7 @@ app.use(cors())
 app.use('/', activities);
 app.use('/', circuits);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9000;
 
 app.listen(port, (result, error) => {
     if(error) {
