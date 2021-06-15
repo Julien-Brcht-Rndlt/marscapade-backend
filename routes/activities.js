@@ -1,7 +1,7 @@
 // Setup environment variables / .env file
 require('dotenv').config(); //npm install dotenv
 //DB config
-const connection = require('../db-config');
+/* const connection = require('../db-config');
 
 connection.connect((err) => {
     if(err){
@@ -9,7 +9,11 @@ connection.connect((err) => {
     } else {
         console.log(`connected to database with threadid: ${connection.threadId}`);
     }
-});
+}); */
+
+const { Pool } = require('pg');
+const connectionString = process.env.DATABASE_URL;
+const connection = new Pool({ connectionString });
 
 const router = require('express').Router();
 
